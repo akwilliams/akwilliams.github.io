@@ -1,13 +1,53 @@
-<html>
-<head>
-	<title>Test Page</title>
-</head>
-<body>
-	<script src="testing.js"></script>
-	<script type="text/javascript">
-		console.log("works")
-		checkIfWorks();
+<script src='birdAudioHandler01.js'></script>
+	<script src='birdVisualHandler01.js'></script>
+	<script src='WAVE.js'></script>
+	<script src='processing.js'></script>
+	<button id='button' onclick="start()">Press Here to Load</button>
+		
+	<canvas id="canvas1" width="300" height="300"></canvas>
+
+	<script>
+		function start(){
+			document.getElementById('button').remove()
+			canvas = document.getElementById("canvas1");
+			ctx = canvas.getContext('2d');
+			var windowDim = [window.innerWidth,window.innerHeight]
+			ctx.canvas.width = windowDim[0];
+			ctx.canvas.height = windowDim[1];
+			ctx.font = "60px Arial";
+			ctx.fillText("Click Here To Load",(windowDim[0]/2)-225,(windowDim[1]/2));
+			birdAudioHandler01.init();
+      		birdAudioHandler01.audioOn();
+			birdAudioHandler01.start();
+			console.log("Audio Started")
+			document.getElementById("canvas1").addEventListener('click',sampleStart)
+		}
+		function sampleStart(){
+			document.getElementById("canvas1").removeEventListener('click',sampleStart);
+			document.getElementById("canvas1").addEventListener('click',startVideo);
+			birdAudioHandler01.initSamples();
+			birdAudioHandler01.initSampler();
+			console.log("Samples Initalized & Sampler Started")
+			canvas = document.getElementById("canvas1");
+			ctx = canvas.getContext('2d');
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+			var windowDim = [window.innerWidth,window.innerHeight]
+			ctx.font = "60px Arial";
+			ctx.fillText("Click Here To Start",(windowDim[0]/2)-225,(windowDim[1]/2));
+		}
+		function sequenceStart(){
+			birdAudioHandler01.startSequencer();
+			console.log("Started");
+		}
+    	function startVideo(){
+    		document.getElementById("canvas1").removeEventListener('click',startVideo);
+    		birdVisualHandler01.loadMixer(birdAudioHandler01.getMixer());
+    		birdVisualHandler01.loadScore(birdAudioHandler01.getScore());
+    		birdVisualHandler01.loadStartButton(birdAudioHandler01.startSequencer())
+      		birdVisualHandler01.init('canvas1',{visMode:0});
+    	}
+
 	</script>
-	    
+    
 </body>
 </html>
