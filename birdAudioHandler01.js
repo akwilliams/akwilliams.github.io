@@ -23,8 +23,8 @@ var birdAudioHandler01 = function(){
 		mixer.wetDry(2,0,0.33);
 
 		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/BD_C1.wav'));
-		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad22.wav'));
-		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad30.wav'));
+		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad22.wav'));
+		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad30.wav'));
 
 		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/long007.wav'));
 		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad31.wav'));
@@ -77,7 +77,7 @@ var birdAudioHandler01 = function(){
 		//mixer.channel[3].voice.outputNode.node.connect(mixer.channel[1].insert[0].effect.node);
 		score.addVoice(mixer.channel[3].voice);
 		for (rrr=0;rrr<200;rrr++){
-			score.addNote(2,rrr,5,0,0);
+			/*score.addNote(2,rrr,5,0,0);
 			score.addNote(2,rrr,5,0.25,0);
 			score.addNote(2,rrr,4.3,0.5,0);
 			score.addNote(2,rrr,6,0.75,0);
@@ -88,17 +88,17 @@ var birdAudioHandler01 = function(){
 			score.addNote(2,rrr,8,2,0);
 			score.addNote(2,rrr,8,2.25,0);
 			score.addNote(2,rrr,8,2.5,0);
-			score.addNote(2,rrr,8,2.75,0);
+			score.addNote(2,rrr,8,2.75,0);*/
 
-			score.addNote(1,rrr,1,0.5,0);
-			score.addNote(1,rrr,1,1.5,0);
+			score.addNote(0,rrr,1,0.5,0);
+			score.addNote(0,rrr,1,1.5,0);
 
-			score.addNote(1,rrr,1,2.5,0);
+			score.addNote(0,rrr,1,2.5,0);
 			
-			score.addNote(3,rrr,1,0,0);
-			score.addNote(3,rrr,1,1,0);
+			score.addNote(1,rrr,1,0,0);
+			score.addNote(1,rrr,1,1,0);
 
-			score.addNote(3,rrr,1,2,0);
+			score.addNote(1,rrr,1,2,0);
 
 			note = Math.floor(Math.random()*10)+1;
 			//note = note-1/note;
