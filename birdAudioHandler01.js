@@ -23,8 +23,8 @@ var birdAudioHandler01 = function(){
 		mixer.wetDry(2,0,0.33);
 
 		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/BD_C1.wav'));
-		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad22.wav'));
-		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad30.wav'));
+		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/Pad22.wav'));
+		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/Pad30.wav'));
 
 		samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/long007.wav'));
 		//samples.push(new WAVE.LoadSampleFromUrl({object:output},'samples/pad31.wav'));
