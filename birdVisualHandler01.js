@@ -221,6 +221,7 @@ var birdVisualHandler01 = function(){
           }
 	     console.log(soundInfo.beatIndex);
 	     console.log(voice);
+	     console.log(soundInfo.beatIndex[voice]);
           if (soundInfo.beatIndex[voice].measure<soundInfo.score.nextScheduling.measure){
                soundInfo.beatIndex[voice].measure=soundInfo.score.nextScheduling.measure
                soundInfo.beatIndex[voice].beat = soundInfo.score.nextScheduling.beat
