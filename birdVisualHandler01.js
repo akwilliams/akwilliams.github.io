@@ -219,6 +219,7 @@ var birdVisualHandler01 = function(){
                var choices = [1/2,1/3,1/4]
                type = choices[Math.floor(Math.random()*choices.length)]
           }
+	     console.log(soundInfo.beatIndex);
 	     console.log(voice);
           if (soundInfo.beatIndex[voice].measure<soundInfo.score.nextScheduling.measure){
                soundInfo.beatIndex[voice].measure=soundInfo.score.nextScheduling.measure
