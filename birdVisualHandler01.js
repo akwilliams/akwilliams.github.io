@@ -6,8 +6,6 @@ var birdVisualHandler01 = function(){
 
 	function birdVisualHandler01(processing){
 		processing.draw = function(){
-               var time = new Date();
-               console.log(time.getMinutes()+':'+time.getSeconds());
      	 	processing.background(0,0,0)
                processing.strokeWeight(0)
                processing.stroke(0,0,0);
@@ -61,7 +59,7 @@ var birdVisualHandler01 = function(){
      	 	}
 
      	 	//Render Projectiles
-     	 	/*for (iiii=0;iiii<visInfo.projectile.length;iiii++){
+     	 	for (iiii=0;iiii<visInfo.projectile.length;iiii++){
      	 		if(visInfo.projectile[iiii]!=undefined){
      	 			if (visInfo.projectile[iiii].hit){
      	 				visInfo.projectile.splice(iiii,1);
@@ -94,7 +92,7 @@ var birdVisualHandler01 = function(){
                          visInfo.notes.splice(iiii,1);
                          iiii--;
      	 		}
-     	 	}*/
+     	 	}
 
      	 	//Render Notes
      	 	for (iiii=0;iiii<visInfo.notes.length;iiii++){
