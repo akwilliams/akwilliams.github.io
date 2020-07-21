@@ -214,7 +214,13 @@ var birdVisualHandler01 = function(){
 	}
 
      function triggerSoundThing(voice,type){
-          var threshold= Math.random();
+	     
+	  //Get Current Time
+	  var currentTime = soundInfo.mixer.context.node.currentTime
+	  var sequenceStart = soundInfo.score.startTime;
+	  var beatsSinceStart = (currentTime-sequenceStart)/(soundInfo.score.tempo/60)
+	  //Schedule Note, do not que
+          /*var threshold= Math.random();
           if(type<0){
                var choices = [1/2,1/3,1/4]
                type = choices[Math.floor(Math.random()*choices.length)]
@@ -251,7 +257,7 @@ var birdVisualHandler01 = function(){
                soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure,0,soundInfo.beatIndex[voice].beat-0.05,0);
           }else{
                soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure-1,0,3.95,0);
-          }
+          }*/
           //soundInfo.mixer.channel[2].insert[0].effect.node.gain.setValueAtTime(1,soundInfo.mixer.context.node.currentTime+0.01)
           //soundInfo.mixer.channel[2].insert[0].effect.node.gain.setValueAtTime(0,soundInfo.mixer.context.node.currentTime+0.5)
          
