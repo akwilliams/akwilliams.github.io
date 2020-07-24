@@ -9,7 +9,7 @@ var birdAudioHandler01 = function(){
 		context = new WAVE.AudioContext();
 		output = new WAVE.Output(context,0);
 		mixer = new WAVE.Mixer({object:output});
-		score = new WAVE.Score({object:output},120,3,3);
+		score = new WAVE.Score({object:output},120,3,24);
 
 		mixer.initChannel({type:'master'},1,true);
 		mixer.addAnalyser(0);
@@ -95,10 +95,10 @@ var birdAudioHandler01 = function(){
 
 			//score.addNote(0,rrr,1,2.5,0);
 			
-			//score.addNote(1,rrr,1,0,0);
-			//score.addNote(1,rrr,1,1,0);
+			score.addNote(1,rrr,1,0,0);
+			score.addNote(1,rrr,1,1,0);
 
-			//score.addNote(1,rrr,1,2,0);
+			score.addNote(1,rrr,1,2,0);
 
 			note = Math.floor(Math.random()*10)+1;
 			//note = note-1/note;
