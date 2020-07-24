@@ -219,25 +219,34 @@ var birdVisualHandler01 = function(){
 	  var currentTime = soundInfo.mixer.context.node.currentTime
 	  var sequenceStart = soundInfo.score.startTime;
 	  var beatsSinceStart = (currentTime-sequenceStart)/(soundInfo.score.tempo/60)
+	  var currentMeasure = Math.floor(beatsSinceStart/soundInfo.score.beatsPerMeasure);
+	  var currentBeat = (beatsSinceStart/soundInfo.score.beatsPerMeasure)-currentMeasure
 	  //Schedule Note, do not que
           var threshold= Math.random();
           if(type<0){
                var choices = [1/2,1/3,1/4]
-               type = choices[Math.floor(Math.random()*choices.length)]
+               var type = choices[Math.floor(Math.random()*choices.length)]
           }
-          /*if (soundInfo.beatIndex[voice].measure<soundInfo.score.measure){
-               soundInfo.beatIndex[voice].measure=soundInfo.score.nextScheduling.measure
-               soundInfo.beatIndex[voice].beat = soundInfo.score.nextScheduling.beat
-          }else if (soundInfo.beatIndex[voice].measure==soundInfo.score.nextScheduling.measure&&soundInfo.beatIndex[voice].beat<soundInfo.score.nextScheduling.beat){
-               soundInfo.beatIndex[voice].beat = soundInfo.score.nextScheduling.beat
+          if (soundInfo.beatIndex[voice].measure<currentMeasure){
+               soundInfo.beatIndex[voice].measure=currentMeasure;
+          }
+	  if (soundInfo.beatIndex[voice].measure==currentMeasure&&soundInfo.beatIndex[voice].beat<currentBeat){
+               soundInfo.beatIndex[voice].beat = currentBeat
           }
           if(threshold>0.33){
                console.log('created a note');
-               soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure,1,soundInfo.beatIndex[voice].beat,0);
+               soundInfo.score.scheduleNote([voice,soundInfo.beatIndex[voice].measure,1,soundInfo.beatIndex[voice].beat,0])
+		//soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure,1,soundInfo.beatIndex[voice].beat,0);
           }else{
                console.log('created a rest');
           }
-          switch(voice){
+	  soundInfo.beatIndex[voice].beat+=type;
+          while(soundInfo.beatIndex[voice].beat>soundInfo.score.beatsPerMeasure){
+               soundInfo.beatIndex[voice].measure++;
+               soundInfo.beatIndex[voice].beat-=soundInfo.score.beatsPerMeasure;
+          }
+          /*
+	  switch(voice){
                case 0:
                     soundInfo.score.addNote(4,soundInfo.beatIndex[voice].measure,soundInfo.possibleNotes[voice][Math.floor(soundInfo.possibleNotes[voice].length*Math.random())],soundInfo.beatIndex[voice].beat,0);
                     break;
