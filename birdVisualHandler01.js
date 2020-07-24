@@ -241,7 +241,12 @@ var birdVisualHandler01 = function(){
           }
           if(threshold>0.33){
                console.log('created a note');
-               soundInfo.score.scheduleNote([0,soundInfo.beatIndex[voice].measure,1.25,soundInfo.beatIndex[voice].beat,0])
+	       var note = Math.floor(Math.random()*10)+1;
+			
+	       while (note>2){
+			note=note/2;
+		}
+               soundInfo.score.scheduleNote([0,soundInfo.beatIndex[voice].measure,note,soundInfo.beatIndex[voice].beat,0])
 		//soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure,1,soundInfo.beatIndex[voice].beat,0);
           }else{
                console.log('created a rest');
