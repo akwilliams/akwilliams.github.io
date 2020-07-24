@@ -218,7 +218,7 @@ var birdVisualHandler01 = function(){
 	  //Get Current Time
 	  var currentTime = soundInfo.mixer.context.node.currentTime
 	  var sequenceStart = soundInfo.score.startTime;
-	  var beatsSinceStart = (currentTime-sequenceStart)/(soundInfo.score.tempo/60)
+	  var beatsSinceStart = (currentTime-sequenceStart)*(soundInfo.score.tempo/60)
 	  var currentMeasure = Math.floor(beatsSinceStart/soundInfo.score.beatsPerMeasure);
 	  var currentBeat = (beatsSinceStart/soundInfo.score.beatsPerMeasure)-currentMeasure
 	  console.log(currentTime,sequenceStart,beatsSinceStart,currentMeasure,currentBeat);
