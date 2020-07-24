@@ -220,15 +220,12 @@ var birdVisualHandler01 = function(){
 	  var sequenceStart = soundInfo.score.startTime;
 	  var beatsSinceStart = (currentTime-sequenceStart)/(soundInfo.score.tempo/60)
 	  //Schedule Note, do not que
-          /*var threshold= Math.random();
+          var threshold= Math.random();
           if(type<0){
                var choices = [1/2,1/3,1/4]
                type = choices[Math.floor(Math.random()*choices.length)]
           }
-	     console.log(soundInfo.beatIndex);
-	     console.log(voice);
-	     console.log(soundInfo.beatIndex[voice]);
-          if (soundInfo.beatIndex[voice].measure<soundInfo.score.nextScheduling.measure){
+          /*if (soundInfo.beatIndex[voice].measure<soundInfo.score.measure){
                soundInfo.beatIndex[voice].measure=soundInfo.score.nextScheduling.measure
                soundInfo.beatIndex[voice].beat = soundInfo.score.nextScheduling.beat
           }else if (soundInfo.beatIndex[voice].measure==soundInfo.score.nextScheduling.measure&&soundInfo.beatIndex[voice].beat<soundInfo.score.nextScheduling.beat){
