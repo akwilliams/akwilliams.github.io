@@ -73,7 +73,6 @@ var birdAudioHandler01 = function(){
 	}
 	function initSampler(){
 		mixer.initChannel(new WAVE.Sampler({object:output},samples),0.25,true);
-		mixer.addSend(3,mixer.channel[1].insert[0].effect.node);
 		//mixer.channel[3].voice.outputNode.node.disconnect();
 		//mixer.channel[3].voice.outputNode.node.connect(mixer.channel[1].insert[0].effect.node);
 		score.addVoice(mixer.channel[3].voice);
