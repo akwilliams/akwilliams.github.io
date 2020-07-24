@@ -9,7 +9,7 @@ var birdAudioHandler01 = function(){
 		context = new WAVE.AudioContext();
 		output = new WAVE.Output(context,0);
 		mixer = new WAVE.Mixer({object:output});
-		score = new WAVE.Score({object:output},120,3,0.25);
+		score = new WAVE.Score({object:output},120,3,0.5);
 
 		mixer.initChannel({type:'master'},1,true);
 		mixer.addAnalyser(0);
