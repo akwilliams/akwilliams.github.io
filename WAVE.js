@@ -780,7 +780,7 @@ WAVE.Score.prototype = {
 		if(this.voice[note[0]].destination.kind!="WAVE.Sampler"){
 
 		}else{
-			//console.log(note[1],note[3],(note[1]*this.beatsPerMeasure),((note[1]*this.beatsPerMeasure)+note[3]),(((note[1]*this.beatsPerMeasure)+note[3])/(this.tempo/60)),(((note[1]*this.beatsPerMeasure)+note[3])/(this.tempo/60))+this.startTime)
+			console.log(note[1],note[3],(note[1]*this.beatsPerMeasure),((note[1]*this.beatsPerMeasure)+note[3]),(((note[1]*this.beatsPerMeasure)+note[3])/(this.tempo/60)),(((note[1]*this.beatsPerMeasure)+note[3])/(this.tempo/60))+this.startTime)
 			this.voice[note[0]].destination.scheduleSample(note[2],(((note[1]*this.beatsPerMeasure)+note[3])/(this.tempo/60))+this.startTime,0,this.voice[note[0]].target);
 		}
 
