@@ -220,7 +220,7 @@ var birdVisualHandler01 = function(){
 	  var sequenceStart = soundInfo.score.startTime;
 	  var beatsSinceStart = (currentTime-sequenceStart)*(soundInfo.score.tempo/60)
 	  var currentMeasure = Math.floor(beatsSinceStart/soundInfo.score.beatsPerMeasure);
-	  var currentBeat = (beatsSinceStart/soundInfo.score.beatsPerMeasure)-currentMeasure
+	  var currentBeat = (beatsSinceStart%soundInfo.score.beatsPerMeasure)
 	  console.log(currentTime,sequenceStart,beatsSinceStart,currentMeasure,currentBeat);
 	  //Schedule Note, do not que
           var threshold= Math.random();
@@ -234,6 +234,11 @@ var birdVisualHandler01 = function(){
 	  if (soundInfo.beatIndex[voice].measure==currentMeasure&&soundInfo.beatIndex[voice].beat<currentBeat){
                soundInfo.beatIndex[voice].beat = currentBeat
           }
+	  soundInfo.beatIndex[voice].beat+=type;
+          while(soundInfo.beatIndex[voice].beat>soundInfo.score.beatsPerMeasure){
+               soundInfo.beatIndex[voice].measure++;
+               soundInfo.beatIndex[voice].beat-=soundInfo.score.beatsPerMeasure;
+          }
           if(threshold>0.33){
                console.log('created a note');
                soundInfo.score.scheduleNote([0,soundInfo.beatIndex[voice].measure,1.25,soundInfo.beatIndex[voice].beat,0])
@@ -241,11 +246,11 @@ var birdVisualHandler01 = function(){
           }else{
                console.log('created a rest');
           }
-	  soundInfo.beatIndex[voice].beat+=type;
+	  /*soundInfo.beatIndex[voice].beat+=type;
           while(soundInfo.beatIndex[voice].beat>soundInfo.score.beatsPerMeasure){
                soundInfo.beatIndex[voice].measure++;
                soundInfo.beatIndex[voice].beat-=soundInfo.score.beatsPerMeasure;
-          }
+          }*/
           /*
 	  switch(voice){
                case 0:
