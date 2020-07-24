@@ -221,6 +221,7 @@ var birdVisualHandler01 = function(){
 	  var beatsSinceStart = (currentTime-sequenceStart)/(soundInfo.score.tempo/60)
 	  var currentMeasure = Math.floor(beatsSinceStart/soundInfo.score.beatsPerMeasure);
 	  var currentBeat = (beatsSinceStart/soundInfo.score.beatsPerMeasure)-currentMeasure
+	  console.log(currentTime,sequenceStart,beatsSinceStart,currentMeasure,currentBeat);
 	  //Schedule Note, do not que
           var threshold= Math.random();
           if(type<0){
