@@ -95,10 +95,10 @@ var birdAudioHandler01 = function(){
 
 			//score.addNote(0,rrr,1,2.5,0);
 			
-			score.addNote(1,rrr,1,0,0);
-			score.addNote(1,rrr,1,1,0);
+			//score.addNote(1,rrr,1,0,0);
+			//score.addNote(1,rrr,1,1,0);
 
-			score.addNote(1,rrr,1,2,0);
+			//score.addNote(1,rrr,1,2,0);
 
 			note = Math.floor(Math.random()*10)+1;
 			//note = note-1/note;
