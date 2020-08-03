@@ -1800,7 +1800,7 @@ WAVE.LoadSampleFromUrl.prototype = {
 		for (var a=0;a<bufferInfo.length;a++){
 			envelopeInfo[a]={duration:1/bufferInfo.length,amount:bufferInfo[a]}
 		}
-		this.node = new WAVE.BufferSource({object:this.destination.object},new WAVE.Buffer({object:this.destination.object},this.buffer.duration*1000,envelopeInfo),false,1,{onEnded:onEnded});//function(){
+		this.node = new WAVE.BufferSource({object:this.destination.object},new WAVE.Buffer({object:this.destination.object},this.buffer.duration*1000,envelopeInfo),false,0.8,{onEnded:onEnded});//function(){
 			
 			//console.log(birdAudioHandler01.getMixer())
 			/*var mixer = birdAudioHandler01.getMixer();
