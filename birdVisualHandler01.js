@@ -238,7 +238,7 @@ var birdVisualHandler01 = function(){
                soundInfo.beatIndex[voice].beat-=soundInfo.score.beatsPerMeasure;
           }
           if(threshold>0.33){
-               console.log('created a note');
+               
 	       var note = Math.floor(Math.random()*10)+1;
 			
 	       while (note>2){
@@ -246,8 +246,6 @@ var birdVisualHandler01 = function(){
 		}
                soundInfo.score.scheduleNote([0,soundInfo.beatIndex[voice].measure,note,soundInfo.beatIndex[voice].beat,0])
 		//soundInfo.score.addNote(voice,soundInfo.beatIndex[voice].measure,1,soundInfo.beatIndex[voice].beat,0);
-          }else{
-               console.log('created a rest');
           }
 	  /*soundInfo.beatIndex[voice].beat+=type;
           while(soundInfo.beatIndex[voice].beat>soundInfo.score.beatsPerMeasure){
