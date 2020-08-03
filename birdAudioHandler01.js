@@ -9,7 +9,7 @@ var birdAudioHandler01 = function(){
 		context = new WAVE.AudioContext();
 		output = new WAVE.Output(context,0);
 		mixer = new WAVE.Mixer({object:output});
-		score = new WAVE.Score({object:output},120,3,0.5);
+		score = new WAVE.Score({object:output},120,3,12);
 
 		mixer.initChannel({type:'master'},1,true);
 		mixer.addAnalyser(0);
@@ -76,7 +76,7 @@ var birdAudioHandler01 = function(){
 		//mixer.channel[3].voice.outputNode.node.disconnect();
 		//mixer.channel[3].voice.outputNode.node.connect(mixer.channel[1].insert[0].effect.node);
 		score.addVoice(mixer.channel[3].voice);
-		for (rrr=0;rrr<200;rrr++){
+		for (rrr=0;rrr<400;rrr++){
 			score.addNote(1,rrr,5,0,0);
 			score.addNote(1,rrr,5,0.25,0);
 			score.addNote(1,rrr,4.3,0.5,0);
