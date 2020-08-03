@@ -147,7 +147,6 @@ var birdVisualHandler01 = function(){
           }
 	}
 	function spawnNewProjectile(x,y,x1,y1){
-		console.log("gotIn");
 		visInfo.projectile.push({position:{x:x1,y:y1},velocity:{x:(x-x1)/(60*2),y:(y-y1)/(60*2)},target:{x:x,y:y},hit:false});
 	}
 
@@ -221,7 +220,6 @@ var birdVisualHandler01 = function(){
 	  var beatsSinceStart = (currentTime-sequenceStart)*(soundInfo.score.tempo/60)
 	  var currentMeasure = Math.floor(beatsSinceStart/soundInfo.score.beatsPerMeasure);
 	  var currentBeat = (beatsSinceStart%soundInfo.score.beatsPerMeasure)
-	  console.log(currentTime,sequenceStart,beatsSinceStart,currentMeasure,currentBeat);
 	  //Schedule Note, do not que
           var threshold= Math.random();
           if(type<0){
