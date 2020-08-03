@@ -89,14 +89,29 @@ var birdAudioHandler01 = function(){
 			score.addNote(1,rrr,8,2.25,0);
 			score.addNote(1,rrr,8,2.5,0);
 			score.addNote(1,rrr,8,2.75,0);
-
+/*
 			//score.addNote(0,rrr,1,0.5,0);
 			//score.addNote(0,rrr,1,1.5,0);
 
 			//score.addNote(0,rrr,1,2.5,0);
 			
 			//score.addNote(0,rrr,1,0,0);
-			//score.addNote(0,rrr,1,1,0);
+		
+			//score.addNote(0,rrr,note,0,0)
+
+			note = Math.floor(Math.random()*10)+1;
+			//note = note-1
+			while (note>2){
+				note=note/2;
+			}
+			//score.addNote(0,rrr,note,1.5,0)
+
+			note = Math.floor(Math.random()*10)+1;
+			//note = note-1/note;
+			while (note>2){
+				note=note/2;
+			}
+			//score.addNote(0,rrr,note,2,0)	//score.addNote(0,rrr,1,1,0);
 
 			//score.addNote(0,rrr,1,2,0);
 
@@ -121,7 +136,7 @@ var birdAudioHandler01 = function(){
 				note=note/2;
 			}
 			//score.addNote(0,rrr,note,2,0)
-			
+			*/
 		}
 	}
 	function getSamples(){
