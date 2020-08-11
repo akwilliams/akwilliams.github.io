@@ -147,6 +147,7 @@ var birdVisualHandler01 = function(){
           processing.setup = function(){
                processing.frameRate(30);
 		squid=processing.loadImage("squid.png","png");
+		squid = squid.resize(864/(2160/processing.height),864/(2160/processing.height))
           }
 	}
 	function spawnNewProjectile(x,y,x1,y1){
