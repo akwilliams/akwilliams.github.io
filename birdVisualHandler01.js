@@ -10,6 +10,7 @@ var birdVisualHandler01 = function(){
      	 	processing.background(0,0,0)
                processing.strokeWeight(0)
                processing.stroke(0,0,0);
+		processing.rotate(0);
      	 	for(iiii=0;iiii<visInfo.stars.length;iiii++){
      	 		processing.fill(visInfo.stars[iiii].r,visInfo.stars[iiii].g,visInfo.stars[iiii].b);
      	 		processing.ellipse(visInfo.stars[iiii].x,visInfo.stars[iiii].y,visInfo.stars[iiii].w,visInfo.stars[iiii].h);
@@ -110,6 +111,7 @@ var birdVisualHandler01 = function(){
                processing.strokeWeight(4);
                processing.noFill()
                processing.stroke(256,256,256)
+		processing.rotate(processing.radians(angle));
 		processing.image(squid,visInfo.ship.position.x,visInfo.ship.position.y);
                //processing.beginShape();
                //processing.vertex(visInfo.ship.position.x+(25*Math.cos((angle*(Math.PI/180)))),visInfo.ship.position.y-(25*Math.sin((angle*(Math.PI/180)))));
