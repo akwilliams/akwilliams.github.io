@@ -3,6 +3,7 @@ var birdVisualHandler01 = function(){
 	var visInfo = {}	
 	var shipPos;
      var soundInfo = {};
+	var squid;
 
 	function birdVisualHandler01(processing){
 		processing.draw = function(){
@@ -144,6 +145,7 @@ var birdVisualHandler01 = function(){
 		}
           processing.setup = function(){
                processing.frameRate(30);
+		squid=loadImage("squid.png","png");
           }
 	}
 	function spawnNewProjectile(x,y,x1,y1){
