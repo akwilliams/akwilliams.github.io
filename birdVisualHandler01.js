@@ -146,16 +146,15 @@ var birdVisualHandler01 = function(){
 		}
           processing.setup = function(){
                processing.frameRate(30);
-		var canvas = document.getElementById(visInfo.canvasID);
-		if(canvas.height>1430){
+		if(processing.height>1430){
 			squid=processing.loadImage("squid.png","png");
-			console.log('squid',canvas.height)
-		}else if (canvas.height>1000){
+			console.log('squid',processing.height)
+		}else if (processing.height>1000){
 			squid=processing.loadImage("squid1.png","png");
-			console.log('squid1',canvas.height);
+			console.log('squid1',processing.height);
 		}else{
 			squid=processing.loadImage("squid2.png","png");	
-			console.log('squid2',canvas.height);
+			console.log('squid2',processing.height);
 		}
           }
 	}
@@ -207,7 +206,7 @@ var birdVisualHandler01 = function(){
 		canvas.height = p.height;
 		visInfo.playerMode = 0;
 		visInfo.stars = [];
-		visInfo.canvasID = canvasID;
+		
 
 		for(iiii=0;iiii<30;iiii++){
 			visInfo.stars[iiii]={x:Math.floor(Math.random()*p.width),y:Math.floor(Math.random()*p.height),w:Math.floor(Math.random()*12)+4,h:Math.floor(Math.random()*12)+4,r:200+Math.floor(Math.random()*56),g:200+Math.floor(Math.random()*56),b:200+Math.floor(Math.random()*56)}
