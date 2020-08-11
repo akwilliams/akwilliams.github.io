@@ -46,13 +46,13 @@ var birdVisualHandler01 = function(){
      	 	var angle = Math.atan(((processing.mouseY-visInfo.ship.position.y)/(processing.mouseX-visInfo.ship.position.x)))/Math.PI*2
      	 	visInfo.ship.angle=angle;
      	 	if (angle<0&&(processing.mouseX-visInfo.ship.position.x)<0){
-     	 		angle=angle*(90)+250
+     	 		angle=angle*(90)+290
      	 	}else if (angle<0&&(processing.mouseX-visInfo.ship.position.x)>0){
-     	 		angle=(angle*(90))+70
+     	 		angle=(angle*(90))+110
      	 	}else if (angle>0&&(processing.mouseY-visInfo.ship.position.y)>0){
-     	 		angle=((angle)*(90))+70;
+     	 		angle=((angle)*(90))+110;
      	 	}else{
-     	 		angle=((angle)*(90))+250;
+     	 		angle=((angle)*(90))+290;
      	 	}
 		
                processing.noFill()
