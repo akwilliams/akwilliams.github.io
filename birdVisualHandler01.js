@@ -146,15 +146,16 @@ var birdVisualHandler01 = function(){
 		}
           processing.setup = function(){
                processing.frameRate(30);
-		if(processing.height>1430){
+		var canvas = document.getElementById(canvasID);
+		if(canvas.height>1430){
 			squid=processing.loadImage("squid.png","png");
-			console.log('squid')
-		}else if (processing.height>1000){
+			console.log('squid',canvas.height)
+		}else if (canvas.height>1000){
 			squid=processing.loadImage("squid1.png","png");
-			console.log('squid1');
+			console.log('squid1',canvas.height);
 		}else{
 			squid=processing.loadImage("squid2.png","png");	
-			console.log('squid2');
+			console.log('squid2',canvas.height);
 		}
           }
 	}
