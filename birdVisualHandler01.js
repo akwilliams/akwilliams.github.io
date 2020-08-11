@@ -146,8 +146,13 @@ var birdVisualHandler01 = function(){
 		}
           processing.setup = function(){
                processing.frameRate(30);
-		squid=processing.loadImage("squid.png","png");
-		squid = squid.resize(432,432)
+		if(processing.height>1430){
+			squid=processing.loadImage("squid.png","png");
+		}else if (processing.height>1000){
+			squid=processing.loadImage("squid1.png","png");
+		}else{
+			squid=processing.loadImage("squid2.png","png");	
+		}
           }
 	}
 	function spawnNewProjectile(x,y,x1,y1){
