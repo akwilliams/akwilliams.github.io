@@ -19,12 +19,12 @@ var birdVisualHandler01 = function(){
      	 	//Render ship
      	 	//Add Velocity to current position
      	 	visInfo.ship.velocity.x+=visInfo.ship.force.x;
-		if (visInfo.ship.velocity.x>window.innerHeight/12){
-			visInfo.ship.velocity.x=window.innerHeight/12
+		if (visInfo.ship.velocity.x>window.innerHeight/120){
+			visInfo.ship.velocity.x=window.innerHeight/120
 		}
      	 	visInfo.ship.velocity.y+=visInfo.ship.force.y;
-		if (visInfo.ship.velocity.y>window.innerHeight/12){
-			visInfo.ship.velocity.y=window.innerHeight/12	
+		if (visInfo.ship.velocity.y>window.innerHeight/120){
+			visInfo.ship.velocity.y=window.innerHeight/120	
 		}
 
      	 	visInfo.ship.position.x+=visInfo.ship.velocity.x;
@@ -221,7 +221,7 @@ var birdVisualHandler01 = function(){
 		visInfo.stars = [];
 		
 
-		for(iiii=0;iiii<65;iiii++){
+		for(iiii=0;iiii<135;iiii++){
 			visInfo.stars[iiii]={x:Math.floor(Math.random()*p.width),y:Math.floor(Math.random()*p.height),w:Math.floor(Math.random()*12)+4,h:Math.floor(Math.random()*12)+4,r:200+Math.floor(Math.random()*56),g:200+Math.floor(Math.random()*56),b:200+Math.floor(Math.random()*56)}
 		}
 
