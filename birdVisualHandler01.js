@@ -117,7 +117,7 @@ var birdVisualHandler01 = function(){
                processing.strokeWeight(4);
                processing.noFill()
                processing.stroke(256,256,256)
-		processing.imageMode(CENTER)
+		processing.imageMode(processing.CENTER)
 		processing.rotate(processing.radians(angle));
 		processing.image(squid,visInfo.ship.position.x,visInfo.ship.position.y);
                //processing.beginShape();
