@@ -19,7 +19,13 @@ var birdVisualHandler01 = function(){
      	 	//Render ship
      	 	//Add Velocity to current position
      	 	visInfo.ship.velocity.x+=visInfo.ship.force.x;
+		if (visInfo.ship.velocity.x>window.innerHeight/10){
+			visInfo.ship.velocity.x=window.innerHeight/10
+		}
      	 	visInfo.ship.velocity.y+=visInfo.ship.force.y;
+		if (visInfo.ship.velocity.y>window.innerHeight/10){
+			visInfo.ship.velocity.y=window.innerHeight/10	
+		}
 
      	 	visInfo.ship.position.x+=visInfo.ship.velocity.x;
      	 	visInfo.ship.position.y+=visInfo.ship.velocity.y;
