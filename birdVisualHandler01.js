@@ -96,7 +96,7 @@ var birdVisualHandler01 = function(){
      	 	}
 
      	 	//Render Notes
-     	 	for (iiii=0;iiii<visInfo.notes.length;iiii++){
+     	 	/*for (iiii=0;iiii<visInfo.notes.length;iiii++){
      	 		processing.stroke(100+((200*visInfo.notes[iiii].voice/2)-100),200-(200*visInfo.notes[iiii].voice/2),256*visInfo.notes[iiii].voice/2);
      	 		processing.fill(100+((200*visInfo.notes[iiii].voice/2)-100),200-(200*visInfo.notes[iiii].voice/2),256*visInfo.notes[iiii].voice/2);
      	 		processing.ellipse(visInfo.notes[iiii].position.x,visInfo.notes[iiii].position.y,Math.random()*10+visInfo.notes[iiii].width,Math.random()*10+visInfo.notes[iiii].width)
@@ -106,11 +106,11 @@ var birdVisualHandler01 = function(){
      	 			visInfo.notes.splice(iiii,1);
      	 			iiii--
      	 		}
-     	 	}
+     	 	}*/
                processing.strokeWeight(4);
                processing.noFill()
                processing.stroke(256,256,256)
-		processing.image(squid,150,150);
+		processing.image(squid,visInfo.ship.position.x,visInfo.ship.position.y);
                //processing.beginShape();
                //processing.vertex(visInfo.ship.position.x+(25*Math.cos((angle*(Math.PI/180)))),visInfo.ship.position.y-(25*Math.sin((angle*(Math.PI/180)))));
                //processing.vertex(visInfo.ship.position.x+(25*Math.cos((150+angle)*(Math.PI/180))),visInfo.ship.position.y-(25*Math.sin((150+angle)*(Math.PI/180))))
@@ -208,7 +208,7 @@ var birdVisualHandler01 = function(){
 		visInfo.stars = [];
 		
 
-		for(iiii=0;iiii<30;iiii++){
+		for(iiii=0;iiii<65;iiii++){
 			visInfo.stars[iiii]={x:Math.floor(Math.random()*p.width),y:Math.floor(Math.random()*p.height),w:Math.floor(Math.random()*12)+4,h:Math.floor(Math.random()*12)+4,r:200+Math.floor(Math.random()*56),g:200+Math.floor(Math.random()*56),b:200+Math.floor(Math.random()*56)}
 		}
 
