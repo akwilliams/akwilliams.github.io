@@ -119,7 +119,7 @@ var birdVisualHandler01 = function(){
                processing.stroke(256,256,256)
 		processing.imageMode(processing.CENTER)
 		processing.pushMatrix();
-		processing.translate(visInfo.ship.position.x,visInfo.posttion.y)
+		processing.translate(visInfo.ship.position.x,visInfo.position.y)
 		processing.rotate(processing.radians(angle));
 		processing.image(squid,0,0);
 		processing.popMatrix();
