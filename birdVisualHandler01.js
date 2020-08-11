@@ -148,10 +148,13 @@ var birdVisualHandler01 = function(){
                processing.frameRate(30);
 		if(processing.height>1430){
 			squid=processing.loadImage("squid.png","png");
+			console.log('squid')
 		}else if (processing.height>1000){
 			squid=processing.loadImage("squid1.png","png");
+			console.log('squid1');
 		}else{
 			squid=processing.loadImage("squid2.png","png");	
+			console.log('squid2');
 		}
           }
 	}
